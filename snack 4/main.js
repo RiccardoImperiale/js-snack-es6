@@ -60,8 +60,7 @@ const people = [
 // // for each person of age make an array indicating that they can drive
 // const peopleDriving = peopleOfAge.map(person => `${person.firstName} ${person.lastName} is old enough to drive.`);
 
-const peopleDriving = people.map(person =>
-    person.age >= 18 ?
+const peopleDriving = people.map(person => person.age >= 18 ?
         `${person.firstName} ${person.lastName} is old enough to drive.` :
         `${person.firstName} ${person.lastName} is NOT old enough to drive.`
 );
