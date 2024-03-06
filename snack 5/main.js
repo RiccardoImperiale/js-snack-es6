@@ -29,3 +29,8 @@ racingBicycles.forEach(bicycle => bicycle.weight < lighterBicycle.weight ? light
 // Stampare in console la bici con peso minore utilizzando destructuring e template literal
 let { model, weight } = lighterBicycle;
 console.log(`The lightest racing bicycle is the ${model} which weighs just ${weight} kg`);
+
+// BONUS Stampare in pagina oltre che in console!
+const lightestBikeText = document.createElement('h3');
+lightestBikeText.innerText = `The lightest racing bicycle is the ${model} which weighs just ${weight} kg`;
+document.querySelector('body').append(lightestBikeText);

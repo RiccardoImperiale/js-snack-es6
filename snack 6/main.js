@@ -40,3 +40,10 @@ const teamsFouls = footballTeams.map(team => {
 });
 
 console.log(teamsFouls);
+
+// BONUS Stampare in pagina oltre che in console!
+teamsFouls.forEach(team => {
+    const { teamName, foulsDrawn } = team;
+    const liMarkup = `<li>The ${teamName} team suffered ${foulsDrawn} fouls</li>`;
+    document.querySelector('ul').insertAdjacentHTML('beforeend', liMarkup);
+});
