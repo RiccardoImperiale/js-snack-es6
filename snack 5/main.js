@@ -36,7 +36,7 @@ footballTeams.forEach(team => {
 // Infine usando la destrutturazione 
 const teamsFouls = footballTeams.map(team => {
     const { teamName, foulsDrawn } = team;
-    return { teamName, foulsDrawn } = team
+    return { teamName, foulsDrawn };
 });
 
 console.log(teamsFouls);
