@@ -65,7 +65,32 @@ const people = [
 //         `${person.firstName} ${person.lastName} is NOT old enough to drive.`
 // );
 
-let peopleDriving = [];
-people.forEach(person => person.age >= 18 && peopleDriving.push(`${person.firstName} ${person.lastName} is old enough to drive.`));
+// let peopleDriving = [];
+// people.forEach(person => person.age >= 18 && peopleDriving.push(`${person.firstName} ${person.lastName} is old enough to drive.`));
+
+
+// const peopleDriving = people.map(person => {
+//     if (person.age >= 18) {
+//         person.canDrive = `${person.firstName} ${person.lastName} is old enough to drive.`
+//     } else {
+//         person.canDrive = `${person.firstName} ${person.lastName} is NOT old enough to drive.`
+//     }
+//     return person
+// }
+// );
+
+const peopleDriving = people.map(person => {
+    person.age >= 18 ? 
+    person.canDrive = `${person.firstName} ${person.lastName} is old enough to drive.` : 
+    person.canDrive = `${person.firstName} ${person.lastName} is NOT old enough to drive.`
+    return person
+}
+);
+
+// const peopleDriving = people.map(person => ({
+//     ...person, canDrive: person.age >= 18 ? 
+//     `${person.firstName} ${person.lastName} is old enough to drive.` : 
+//     `${person.firstName} ${person.lastName} is NOT old enough to drive.`
+// }));
 
 console.log(peopleDriving);
