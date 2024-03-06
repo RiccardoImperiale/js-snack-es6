@@ -17,5 +17,10 @@ const zucchine = [
 const zucchineMenoDi15 = zucchine.filter(zucchina => zucchina.lunghezza <= 15 && zucchine)
 const zucchinePiuDi15 = zucchine.filter(zucchina => zucchina.lunghezza > 15 && zucchine)
 // Infine stampa separatamente quanto pesano i due gruppi di zucchine.
-console.log(zucchineMenoDi15);
-console.log(zucchinePiuDi15);
+let pesoZucchineMenoDi15 = 0;
+let pesoZucchinePiuDi15 = 0;
+zucchineMenoDi15.forEach(zucchina => pesoZucchineMenoDi15 += zucchina.peso);
+zucchinePiuDi15.forEach(zucchina => pesoZucchinePiuDi15 += zucchina.peso);
+
+console.log(pesoZucchineMenoDi15);
+console.log(pesoZucchinePiuDi15);
