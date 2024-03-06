@@ -1,42 +1,31 @@
-// Creare un array di oggetti di squadre di calcio.
-// Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-// Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-const footballTeams = [
-    { teamName: 'Italy', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Spain', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'France', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'England', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Germany', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Argentina', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Netherlands', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Mexico', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Colombia', poinsMade: 0, foulsDrawn: 0 },
-    { teamName: 'Japan', poinsMade: 0, foulsDrawn: 0 },
+// Creare un array di oggetti:
+// Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+const racingBicycles = [
+    { modelName: 'Specialized Tarmac SL7', weight: 6.7 },
+    { modelName: 'Trek Madone SLR', weight: 7.1 },
+    { modelName: 'Canyon Ultimate CF SLX', weight: 6.8 },
+    { modelName: 'Pinarello Dogma F12', weight: 6.9 },
+    { modelName: 'BMC Teammachine SLR01', weight: 6.2 },
+    { modelName: 'Giant TCR Advanced Pro', weight: 7 },
+    { modelName: 'Cannondale SuperSix EVO', weight: 6.8 },
+    { modelName: 'Scott Addict RC', weight: 6.5 },
+    { modelName: 'Bianchi Oltre XR4', weight: 7.2 },
+    { modelName: 'Merida Reacto Disc Team', weight: 7.1 }
 ];
 
 /* 
 // SOLUTION 1
-// Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
-const teams = footballTeams.map(team => {
-    const randNumPoints = Math.floor(Math.random() * 50);
-    const randNumFouls = Math.floor(Math.random() * 10);
-    return {...team, poinsMade: randNumPoints, foulsDrawn: randNumFouls};
-});
+let lighterBicycleWeight = Infinity;
+racingBicycles.forEach(bicycle => bicycle.weight < lighterBicycleWeight ? lighterBicycleWeight = bicycle.weight : lighterBicycleWeight);
+const lighterBicycle = racingBicycles.filter(bicycle => bicycle.weight === lighterBicycleWeight && bicycle);
+// Stampare in console la bici con peso minore utilizzando destructuring e template literal
+let { modelName, weight } = lighterBicycle[0];
+console.log(`The lightest racing bicycle is the ${modelName} which weighs just ${weight} kg`);
 */
 
 // SOLUTION 2
-footballTeams.forEach(team => {
-    const randNumPoints = Math.floor(Math.random() * 50);
-    const randNumFouls = Math.floor(Math.random() * 10);
-    team.poinsMade = randNumPoints;
-    team.foulsDrawn = randNumFouls;
-});
-
-// creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
-// Infine usando la destrutturazione 
-const teamsFouls = footballTeams.map(team => {
-    const { teamName, foulsDrawn } = team;
-    return { teamName, foulsDrawn };
-});
-
-console.log(teamsFouls);
+let lighterBicycle = { modelName: '', weight: Infinity };
+racingBicycles.forEach(bicycle => bicycle.weight < lighterBicycle.weight ? lighterBicycle = bicycle : lighterBicycle);
+// Stampare in console la bici con peso minore utilizzando destructuring e template literal
+let { model, weight } = lighterBicycle;
+console.log(`The lightest racing bicycle is the ${model} which weighs just ${weight} kg`);
