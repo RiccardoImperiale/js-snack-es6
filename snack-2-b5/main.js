@@ -15,7 +15,6 @@ const zucchine = [
 
 // Dividi in due array separati le zucchine che misurano meno o più di 15cm.
 const zucchineMenoDi15 = zucchine.filter(zucchina => zucchina.lunghezza <= 15 && zucchine)
-// const secondArray = zucchine.filter(zucchina => pesoZucchine += zucchina.peso);
 const zucchinePiuDi15 = zucchine.filter(zucchina => zucchina.lunghezza > 15 && zucchine)
 // Infine stampa separatamente quanto pesano i due gruppi di zucchine.
 console.log(zucchineMenoDi15);
